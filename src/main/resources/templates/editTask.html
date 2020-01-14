@@ -1,0 +1,72 @@
+<html xmlns:th="http://www.w3.org/1999/xhtml" xmlns:form="http://www.w3.org/1999/xhtml">
+<head>
+    <title th:text="#{application.name}"></title>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+    <link href="/css/layout.css" th:href="@{/css/layout.css}" rel="stylesheet"/>
+</head>
+<body>
+<div id="content">
+    <h1 th:text="${action}"></h1>
+    <form action="#" th:action="@{/saveTask}" th:object="${task}" method="post">
+        <div id="task" class="row">
+            <div class="label">
+                <label for="taskDescription" th:text="#{editTask.taskLabel}"/>
+            </div>
+            <div class="textValue">
+                <input id="taskDescription" type="text" th:field="*{name}"/>
+            </div>
+            <div th:if="${#fields.hasErrors('name')}" th:errors="*{name}" class="errors"> </div>
+        </div>
+        <div id="factors" class="row">
+            <div class="label">
+                <label for="importantFactor" th:text="#{editTask.importantFactor}"/>
+            </div>
+            <div class="sliderValue">
+                <div class="slidercontainer">
+                    <input id="importantFactor" type="range" class="slider" min="-1" max="1" step="0.1" th:field="*{important}"/>
+                </div>
+                <div class="sliderValue"><span id="importantFactorValue"></span></div>
+            </div>
+            <script>
+            var importantSlider = document.getElementById("importantFactor");
+            var importantOutput = document.getElementById("importantFactorValue");
+            importantOutput.innerHTML = importantSlider.value; // Display the default slider value
+
+            // Update the current slider value (each time you drag the slider handle)
+            importantSlider.oninput = function() {
+            importantOutput.innerHTML = this.value;
+            }
+            </script>
+            <div class="separator"></div>
+            <div class="label">
+                <label for="urgentFactor" th:text="#{editTask.urgentFactor}"/>
+            </div>
+            <div class="sliderValue">
+                <div class="slidercontainer">
+                    <input id="urgentFactor" type="range" class="slider" min="-1" max="1" step="0.1" th:field="*{urgent}"/>
+                </div>
+                <div class="sliderValue" ><span id="urgentFactorValue"></span></div>
+            </div>
+            <script>
+            var urgentSlider = document.getElementById("urgentFactor");
+            var urgentOutput = document.getElementById("urgentFactorValue");
+            urgentOutput.innerHTML = urgentSlider.value; // Display the default slider value
+
+            // Update the current slider value (each time you drag the slider handle)
+            urgentSlider.oninput = function() {
+            urgentOutput.innerHTML = this.value;
+            }
+            </script>
+        </div>
+        <div id="buttons" class="buttons">
+            <div id="submitButton" class="actionButton">
+                <input type="submit" th:value="#{editTask.submit}"/>
+            </div>
+            <div id="cancelButton" class="actionButton">
+                <a id="cancel" href="/" th:text="#{editTask.cancel}"></a>
+            </div>
+        </div>
+    </form>
+</div>
+</body>
+</html>

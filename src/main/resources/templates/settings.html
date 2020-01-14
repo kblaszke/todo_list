@@ -1,0 +1,38 @@
+<html xmlns:th="http://www.w3.org/1999/xhtml">
+<head>
+    <title th:text="#{application.name}"></title>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+    <link href="/css/layout.css" th:href="@{/css/layout.css}" rel="stylesheet"/>
+</head>
+<body>
+<div id="shortContent">
+    <h1 th:text="#{settings.title}"></h1>
+    <form action="#" th:action="@{/settings/}" th:object="${settings}" method="post">
+        <div class="row">
+            <div class="mediumLabel" >
+                <label for="importantFactor" th:text="#{settings.importantFactor}"/>
+            </div>
+            <div class="shortTextValue">
+                <input id="importantFactor" type="number" th:field="*{importantFactor}" min="-10" max="10" step="0.1" onkeydown="return false"/>
+            </div>
+        </div>
+        <div class="row">
+            <div class="mediumLabel" >
+                <label for="urgentFactor" th:text="#{settings.urgentFactor}"/>
+            </div>
+            <div class="shortTextValue">
+                <input id="urgentFactor" type="number" th:field="*{urgentFactor}" min="-10" max="10" step="0.1" onkeydown="return false"/>
+            </div>
+        </div>
+        <div id="buttons" class="buttons">
+            <div id="submitButton" class="actionButton">
+                <input type="submit" th:value="#{settings.submit}"/>
+            </div>
+            <div id="cancelButton" class="actionButton">
+                <a id="cancel" href="/" th:text="#{settings.cancel}"></a>
+            </div>
+        </div>
+    </form>
+</div>
+</body>
+</html>

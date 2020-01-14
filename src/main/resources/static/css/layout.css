@@ -1,0 +1,208 @@
+* {
+        margin: 0px;
+        padding: 0px;
+        box-sizing: border-box;
+}
+
+#menuButton {
+    float: left;
+    padding-top: 6px;
+    margin-right: 6px;
+}
+
+body, html {
+        height: 100%;
+        font-family: sans-serif;
+        font-size: 16;
+        color: #404040;
+        background-color: #fcfcfc;
+}
+
+a {
+        color: inherit;
+        text-decoration: inherit;
+        font-size: inherit;
+        outline: none;
+        outline-style: none;
+        padding: 2px;
+}
+
+input {
+        font-size: 14;
+        border: none;
+        background-color: inherit;
+        cursor: inherit;
+        color: inherit;
+        outline: none;
+        outline-style: none;
+        padding: 2px;
+}
+
+#content {
+        margin: 10px;
+        width: 600px;
+}
+
+#shortContent {
+    margin: 10px;
+    width: 350px;
+}
+
+.row {
+        display: block;
+        width: 100%;
+        height: 20px;
+        margin-top: 20px;
+}
+
+.label {
+        width: 100px;
+        float: left;
+}
+
+.mediumLabel {
+        width: 250px;
+        float: left;
+}
+
+.longLabel {
+    width: 400px;
+    float: left;
+}
+
+.shortTextValue {
+        width: 100px;
+        float: left;
+        border: 1px solid #959595;
+        box-shadow: 2px 2px 3px #cccccc;
+}
+
+.textValue {
+        width: 500px;
+        float: left;
+        border: 1px solid #959595;
+        box-shadow: 2px 2px 3px #cccccc;
+}
+
+.textValue input {
+    width: 100%;
+}
+
+.shortTextValue input {
+    width: 100%;
+}
+
+.sliderValue {
+        width: 150px;
+        float: left;
+}
+
+.slidecontainer {
+  width: 100%; /* Width of the outside container */
+}
+
+/* The slider itself */
+.slider {
+  -webkit-appearance: none;  /* Override default CSS styles */
+  appearance: none;
+  width: 100%; /* Full-width */
+  height: 8px; /* Specified height */
+  background: lightgray; /* Grey background */
+  outline: none; /* Remove outline */
+  opacity: 0.7; /* Set transparency (for mouse-over effects on hover) */
+  -webkit-transition: .2s; /* 0.2 seconds transition on hover */
+  transition: opacity .2s;
+}
+
+/* Mouse-over effects */
+.slider:hover {
+  opacity: 1; /* Fully shown on mouse-over */
+}
+
+/* The slider handle (use -webkit- (Chrome, Opera, Safari, Edge) and -moz- (Firefox) to override default look) */
+.slider::-webkit-slider-thumb {
+  -webkit-appearance: none; /* Override default look */
+  appearance: none;
+  width: 10px; /* Set a specific slider handle width */
+  height: 20px; /* Slider handle height */
+  /*border-radius: 50%;*/
+  background: lightgray;
+  border: 1px solid #959595;
+  box-shadow: 2px 2px 3px #cccccc;
+  cursor: pointer; /* Cursor on hover */
+}
+
+.slider::-moz-range-thumb {
+  -webkit-appearance: none; /* Override default look */
+  width: 10px; /* Set a specific slider handle width */
+  height: 20px; /* Slider handle height */
+  /*border-radius: 50%;*/
+  background: lightgray;
+  border: 1px solid #959595;
+  box-shadow: 2px 2px 3px #cccccc;
+  cursor: pointer; /* Cursor on hover */
+}
+
+.slider input {
+        width: 100%;
+}
+
+.sliderValue {
+    padding-top: 6px;
+    font-size: 9;
+    text-align: center;
+}
+
+.separator {
+        width: 100px;
+        min-height: 20px;
+        float: left;
+}
+
+.buttons {
+        margin-top: 40px;
+        display: block;
+}
+
+.rightButtons {
+    width: 30%;
+    float: right;
+}
+
+.atRight {
+    float: right;
+    margin-left: 5px;
+}
+
+.actionButton {
+        width: 150px;
+        height: 28px;
+        text-align: center;
+        font-size: 14;
+        border: 1px solid #959595;
+        box-shadow: 2px 2px 3px #cccccc;
+        background-color: lightgray;
+        float: right;
+        margin-left: 20px;
+        padding: 4px 15px 2px 15px;
+        cursor: pointer;
+}
+
+.actionButton input {
+    padding: 0;
+}
+
+.atLeft {
+    float: left;
+}
+
+.description {
+        width: 100%;
+}
+
+.errors {
+    font-size: 10;
+    padding-left: 100px;
+    font-style: italic;
+    color: darkred;
+}
