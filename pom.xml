@@ -10,7 +10,7 @@
 	</parent>
 	<groupId>pl.blaszak</groupId>
 	<artifactId>ImportandUrgent</artifactId>
-	<version>0.0.1-SNAPSHOT</version>
+	<version>1.0</version>
 	<name>ImportandUrgent</name>
 	<description>Importand and Urgent TODO list manager</description>
 
